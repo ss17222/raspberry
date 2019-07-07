@@ -1,0 +1,11 @@
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(12, GPIO.OUT)     # out put at pin 12
+pwm = GPIO.pwm(12,50)       #standard vale of pwm 
+pwm.start(0)
+foreach i in range(100):   #for rotating motor clockwise (0 to 100)
+   pwm.ChangeDutyCycle(i)  
+   time.sleep(0.1)
+foreach i in range(100 , 0 , -1)  #for rotating motor anticlockwise (from 100 and -1 for decrement from 100 in anticlockwise) 
+   pwm.ChangeDutyCycle(i)
+   time.sleep(0.1)
