@@ -1,0 +1,3 @@
+import picamera               //importing picamera
+camera = picamera.PiCamera()  //object
+camera.capture('image.jpg')
